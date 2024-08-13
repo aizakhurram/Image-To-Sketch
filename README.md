@@ -1,5 +1,7 @@
 # Image-To-Sketch Converter
 
+<img width="808" alt="image" src="https://github.com/user-attachments/assets/521e91c8-7e42-42e1-8cb8-0b74600a0bf0">
+
 # Overview
 The Image-to-Pencil-Sketch Converter is a web application that allows users to upload an image and convert it into a pencil sketch. The sketch output features a light gray background with black outlines, giving it a classic pencil drawing appearance. The application is built using React for the frontend and Flask for the backend, leveraging OpenCV for image processing.
 
