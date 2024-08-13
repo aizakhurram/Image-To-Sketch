@@ -1,9 +1,11 @@
 from flask import Flask, request, send_file
+from flask_cors import CORS
 import cv2
 import numpy as np
 from io import BytesIO
 
 app = Flask(__name__)
+CORS(app)
 
 def convert_to_sketch(image):
     gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)

@@ -54,24 +54,41 @@ function Home() {
       <header className="home-header">
         <h1>Turn Your Photos into Art!</h1>
         <p>Easily convert your images into beautiful pencil sketches.</p>
-        <Link to="/convert">
-          <button className="convert-button">Get Started</button>
-        </Link>
+        
       </header>
       <h2>Convert Your Image to a Pencil Sketch</h2>
-      <form onSubmit={handleSubmit} className="convert-form">
+      <button type="submit" className="convert-button" onClick={handleSubmit}>
+          Convert to Sketch
+        </button>
+      
+      <form className="convert-form">
+      
+       
         <div className="image-box">
           <h3>Original Image</h3>
           {image && <img src={image} alt="Original" className="preview-image" />}
-          <input type="file" onChange={handleImageChange} />
+          <label htmlFor="file-upload" className="custom-file-upload">
+            Choose File
+          </label>
+          <input 
+            id="file-upload" 
+            type="file" 
+            onChange={handleImageChange} 
+            style={{ display: 'none' }} 
+          />
         </div>
         <div className="image-box">
-          <h3>Pencil Sketch</h3>
-          {sketch && <img src={sketch} alt="Pencil Sketch" className="image-preview" />}
+        <h3>Pencil Sketch</h3>
+          {sketch && (
+            <>
+              <img src={sketch} alt="Pencil Sketch" className="preview-image" />
+              <a href={sketch} download="sketch.png">
+                <button type="button" className="convert-button">Download Sketch</button>
+              </a>
+            </>
+          )}
         </div>
-        <button type="submit" className="convert-button">
-          Convert to Sketch
-        </button>
+        
       </form>
       
     </div>
